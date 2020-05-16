@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <title>Java vue js</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="name">
+    <p> {{name}} </p>
+    <img v-bind:src="image1"><p @click="myimage"><b><u>click to sexy photo</u></b></p>
+    <a :href="link1" target="_blank"> click for boom !! </a>
+    <p v-if="product"> sugar </p>
+    <p v-show="girls"> girls which don't need to show </p>
+    <p v-if="instock > 10"> have a products</p>
+    <p v-else-if="instock <= 10 && instock > 0"> almost sold </p>
+    <p v-else> sorry soon will instock </p>
+    <ol>
+        <img :src="productphoto" height="100px" width="100px">
+        <li v-for="product in products" :key="product.id" @mouseover="Productimage(product.photo)" > {{ product.item }} </li>
+    </ol>
+    <div>
+        <button v-on:click="cart += 1"> add one </button><p> ( {{ cart }} ) </p>
+        <button v-on:click="addtocard"> add by method </button><p> ( {{ Secondcart }} ) </p>
+        <button :disabled="!instock1" :class="{ disabledButton : !instock1 }"> try button </button>
+        <button :disabled="!instock2" :class="{ disabledButton : !instock2 }"> try button </button>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>   
+</body>
+</html>
